@@ -31,6 +31,11 @@ function dotfiles_gitCommit {
   fi
 }
 
+function dotfiles_gitStageCommit {
+  dotfiles_gitStage
+  dotfiles_gitCommit
+}
+
 function dotfiles_gitUpload {
   dotfiles_gitStage
   dotfiles_gitCommit
@@ -48,12 +53,16 @@ function dotfiles {
   elif [ "$1" = "-d" ] || [ "$1" = "--download" ]
   then
     dotfiles_gitDownload
+  elif [ "$1" = "-c" ] || [ "$1" = "--commit" ]
+  then
+    dotfiles_gitStageCommit
   else
     echo "\
 Dotfiles synchronization tool.
 Options:
-  -u, --upload        upload configations to the cloud
-  -d, --download      download configuration from the cloud
+  -c, --commit        commit changes in dotfiles
+  -u, --upload        upload dotfiles to remote repository
+  -d, --download      download dotfiles from remote repository
   -h, --help          print usage interface\
 "
   fi 
