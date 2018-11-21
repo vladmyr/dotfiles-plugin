@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# git init
-
 echo "\
 Hello $(whoami)!
 This Dotfiles plugin installation script will do the following for you:
