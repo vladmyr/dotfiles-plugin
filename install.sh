@@ -8,7 +8,6 @@ This Dotfiles plugin installation script will do the following for you:
     ~/.oh-my-zsh/custom/plugins/dotfiles/dotfiles.plugin.zsh
     ~/.gitignore
     ~/.gitinclude
-- Commit and push to remote repository
 Should script start installation [y/n]?";
 
 read isInstallationConfirmed
@@ -39,19 +38,15 @@ then
   read gitEmail
   git config -f ~/.git/config user.email "$gitEmail"
 
-  cd ~
-  git add .
-  git commit -m "initial commit"
-
   echo "\
 Installation complete!
 
 Now make sure to enable plugin in .zshrc, eg:
-  plugins=(git dotfiles)
+  plugins=(... dotfiles)
 Afterwards execute
   > source ~/.zshrc
   > dotfiles -h
-To verify plugin is installed correctly
+To verify plugin is installed correctly. 
 "
 else
   echo "\
