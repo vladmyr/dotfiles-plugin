@@ -50,7 +50,7 @@ Now make sure to enable plugin in .zshrc, eg:
 Afterwards execute
   > source ~/.zshrc
   > dotfiles -h
-To verify plugin is installed correctly. 
+To verify plugin is installed correctly.
 
 To uninstall the plugin revert change in .zshrc and execute:
   > rm -rf .git .gitignore .gitinclude .oh-my-zsh/custom/plugins/dotfiles

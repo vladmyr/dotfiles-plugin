@@ -7,7 +7,7 @@ An Oh My Zsh plugin to keep your dotfines in sync across multiple PCs using Git.
 
 ## Installation
 ```
-$
+$ sh <(curl -sL https://raw.githubusercontent.com/vladmyr/dotfiles-plugin/master/install.sh) 
 ```
 
 ## Under the hood
