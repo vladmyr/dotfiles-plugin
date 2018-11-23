@@ -21,7 +21,7 @@ then
 
   # curl plugin into oh-my-zsh
   mkdir -p ~/.oh-my-zsh/custom/plugins/dotfiles
-  curl -sL https://raw.githubusercontent.com/vladmyr/dotfiles-plugin/master/dotfiles.plugin.zsh -o ~/.oh-my-zsh/custom/plugins/dotfiles
+  curl -sL https://raw.githubusercontent.com/vladmyr/dotfiles-plugin/master/dotfiles.plugin.zsh -o ~/.oh-my-zsh/custom/plugins/dotfiles/dotfiles.plugin.zsh
   
   # write .gitignore & .gitinclude
   echo "\
