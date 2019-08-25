@@ -16,8 +16,8 @@ function dotfiles_hasStagedFiles {
 function dotfiles_gitStage {
   dotfiles_gitInclude
   git add .
-  if dotfiles_hasStagedFiles; 
-  then 
+  if dotfiles_hasStagedFiles;
+  then
     cGreen='\033[0;32m'
     cNone='\033[0m'
     echo -e "Staged changes:\n${cGreen}$(git diff --name-only --cached | cat)${cNone}"
@@ -47,6 +47,9 @@ function dotfiles_gitDownload {
 }
 
 function dotfiles {
+  local current_dir=$(pwd)
+  cd ~
+
   if [ "$1" = "-u" ] || [ "$1" = "--upload" ]
   then
     dotfiles_gitUpload
@@ -65,5 +68,7 @@ Options:
   -d, --download      download dotfiles from remote repository
   -h, --help          print usage interface\
 "
-  fi 
+  fi
+
+  cd $current_dir
 }
