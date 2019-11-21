@@ -5,7 +5,7 @@ Hello $(whoami)!
 This Dotfiles plugin installation script will do the following for you:
 - Setup Git repository in you home folder. You will be asked to enter remote address, username, and email
 - Write necessery files:
-    ~/.oh-my-zsh/custom/plugins/dotfiles/dotfiles.plugin.zsh
+    ~ZSH_CUSTOM/custom/plugins/dotfiles/dotfiles.plugin.zsh
     ~/.gitignore
     ~/.gitinclude
 Should script start installation [y/n]?";
@@ -20,14 +20,14 @@ then
   echo "Installing..."
 
   # curl plugin into oh-my-zsh
-  mkdir -p ~/.oh-my-zsh/custom/plugins/dotfiles
-  curl -sL https://raw.githubusercontent.com/vladmyr/dotfiles-plugin/master/dotfiles.plugin.zsh -o ~/.oh-my-zsh/custom/plugins/dotfiles/dotfiles.plugin.zsh
+  mkdir -p ~ZSH_CUSTOM/custom/plugins/dotfiles
+  curl -sL https://raw.githubusercontent.com/vladmyr/dotfiles-plugin/master/dotfiles.plugin.zsh -o ~ZSH_CUSTOM/custom/plugins/dotfiles/dotfiles.plugin.zsh
   
   # write .gitignore & .gitinclude
   echo "\
 .zshrc
-.oh-my-zsh/custom/themes/*
-.oh-my-zsh/custom/plugins/*" > ~/.gitinclude
+~ZSH_CUSTOM/custom/themes/*
+~ZSH_CUSTOM/custom/plugins/*" > ~/.gitinclude
   echo "\
 /*
 !.gitignore
@@ -53,7 +53,7 @@ Afterwards execute
 To verify plugin is installed correctly.
 
 To uninstall the plugin revert change in .zshrc and execute:
-  > rm -rf .git .gitignore .gitinclude .oh-my-zsh/custom/plugins/dotfiles
+  > rm -rf .git .gitignore .gitinclude ~ZSH_CUSTOM/custom/plugins/dotfiles
 "
 else
   echo "\
